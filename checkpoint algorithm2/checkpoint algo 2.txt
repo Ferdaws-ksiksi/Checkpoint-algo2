@@ -1,0 +1,54 @@
+ALGORITHM checkpoint2
+VAR 
+  arr1:ARRAY_OF INTEGER[];
+  arr12:ARRAY_OF INTEGER[];
+  i:INTEGER;
+  j:INTEGER;
+  SUM1:INTEGER:=0;
+  SUM2:INTEGER:=0;
+  SUM:INTEGER:=0;
+
+
+BEGIN
+
+   FOR i FROM 0 TO length(arr1) DO
+   
+      FOR j FROM 0 TO length(arr2) DO
+     
+           IF(arr1[i]=arr2[j]) THEN
+      
+                BREAK;
+
+           ELSE
+
+             SUM1+=arr1[i];
+
+           END_IF
+
+      END_FOR
+
+   END_FOR
+
+   FOR j FROM 0 TO length(arr2) DO
+   
+       FOR i FROM 0 TO length(arr1) DO
+    
+          IF(arr2[j]=arr1[i]) THEN
+      
+             BREAK;
+
+          ELSE
+
+             SUM2+=arr1[j];
+
+         END_IF
+
+    END_FOR
+
+    END_FOR
+
+     SUM= SUM1+SUM2;
+
+  write("Sum of all distinct elements:",SUM);
+
+END
